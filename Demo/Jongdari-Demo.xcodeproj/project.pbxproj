@@ -14,6 +14,8 @@
 		509247D528C5902600291AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509247CD28C5902600291AF7 /* Main.storyboard */; };
 		509247D628C5902600291AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247CF28C5902600291AF7 /* AppDelegate.swift */; };
 		509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247D128C5902600291AF7 /* SceneDelegate.swift */; };
+		5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; };
+		5092480728C86E8200291AF7 /* Jongdari.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5092480828C86E8200291AF7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5092480728C86E8200291AF7 /* Jongdari.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5092479228C58FE400291AF7 /* Jongdari-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jongdari-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509247A828C58FE500291AF7 /* Jongdari-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jongdari-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +53,7 @@
 		509247CF28C5902600291AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509247D028C5902600291AF7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		509247D128C5902600291AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5092480528C86E8200291AF7 /* Jongdari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Jongdari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +81,7 @@
 				509247C528C58FED00291AF7 /* Demo */,
 				509247AB28C58FE500291AF7 /* Jongdari-DemoTests */,
 				5092479328C58FE400291AF7 /* Products */,
+				5092480428C86E8200291AF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +141,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5092480428C86E8200291AF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5092480528C86E8200291AF7 /* Jongdari.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +159,7 @@
 				5092478E28C58FE400291AF7 /* Sources */,
 				5092478F28C58FE400291AF7 /* Frameworks */,
 				5092479028C58FE400291AF7 /* Resources */,
+				5092480828C86E8200291AF7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

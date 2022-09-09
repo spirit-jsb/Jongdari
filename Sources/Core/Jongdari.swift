@@ -9,13 +9,15 @@
 
 import UIKit
 
+public typealias TransitionHandler = (VMDrawerAnimationConfiguration.TransitionDirection) -> Void
+
 public protocol JongdariCompatible {
   
 }
 
 public struct JongdariWrapper<Base> {
   
-  public let base: Base
+  public var base: Base
   
   public init(base: Base) {
     self.base = base

@@ -12,10 +12,14 @@
 		509247E028C5990500291AF7 /* Jongdari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247DF28C5990500291AF7 /* Jongdari.swift */; };
 		509247EA28C5A1B400291AF7 /* UIViewController+Jongdari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247E928C5A1B400291AF7 /* UIViewController+Jongdari.swift */; };
 		509247EC28C5A23E00291AF7 /* VMDrawerAnimationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247EB28C5A23E00291AF7 /* VMDrawerAnimationConfiguration.swift */; };
-		509247EE28C5BDDC00291AF7 /* VMDrawerTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247ED28C5BDDC00291AF7 /* VMDrawerTransitioner.swift */; };
-		509247F228C5C39F00291AF7 /* VMDrawerAnimationer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247F128C5C39F00291AF7 /* VMDrawerAnimationer.swift */; };
-		509247F628C5EBB600291AF7 /* VMDrawerMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247F528C5EBB600291AF7 /* VMDrawerMaskView.swift */; };
-		509247F828C5F6BC00291AF7 /* VMDrawerInteractiveTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247F728C5F6BC00291AF7 /* VMDrawerInteractiveTransitioner.swift */; };
+		509247FC28C70F9D00291AF7 /* VMDrawerAnimatedTransitioningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247FB28C70F9D00291AF7 /* VMDrawerAnimatedTransitioningController.swift */; };
+		509247FE28C70FC800291AF7 /* VMDrawerInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247FD28C70FC800291AF7 /* VMDrawerInteractiveTransition.swift */; };
+		5092480028C7107A00291AF7 /* VMDrawerTransitioningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247FF28C7107A00291AF7 /* VMDrawerTransitioningController.swift */; };
+		5092480328C85CEF00291AF7 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092480228C85CEF00291AF7 /* Runtime.swift */; };
+		5092480A28C8766400291AF7 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092480928C8766400291AF7 /* Update.swift */; };
+		5092480C28C8937700291AF7 /* VMDrawerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092480B28C8937700291AF7 /* VMDrawerPresentationController.swift */; };
+		5092480E28C89D5500291AF7 /* VMDrawerDimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092480D28C89D5500291AF7 /* VMDrawerDimmingView.swift */; };
+		5092481028C89EC800291AF7 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092480F28C89EC800291AF7 /* Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +39,14 @@
 		509247DF28C5990500291AF7 /* Jongdari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jongdari.swift; sourceTree = "<group>"; };
 		509247E928C5A1B400291AF7 /* UIViewController+Jongdari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Jongdari.swift"; sourceTree = "<group>"; };
 		509247EB28C5A23E00291AF7 /* VMDrawerAnimationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerAnimationConfiguration.swift; sourceTree = "<group>"; };
-		509247ED28C5BDDC00291AF7 /* VMDrawerTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerTransitioner.swift; sourceTree = "<group>"; };
-		509247F128C5C39F00291AF7 /* VMDrawerAnimationer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerAnimationer.swift; sourceTree = "<group>"; };
-		509247F528C5EBB600291AF7 /* VMDrawerMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerMaskView.swift; sourceTree = "<group>"; };
-		509247F728C5F6BC00291AF7 /* VMDrawerInteractiveTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerInteractiveTransitioner.swift; sourceTree = "<group>"; };
+		509247FB28C70F9D00291AF7 /* VMDrawerAnimatedTransitioningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerAnimatedTransitioningController.swift; sourceTree = "<group>"; };
+		509247FD28C70FC800291AF7 /* VMDrawerInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerInteractiveTransition.swift; sourceTree = "<group>"; };
+		509247FF28C7107A00291AF7 /* VMDrawerTransitioningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerTransitioningController.swift; sourceTree = "<group>"; };
+		5092480228C85CEF00291AF7 /* Runtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
+		5092480928C8766400291AF7 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
+		5092480B28C8937700291AF7 /* VMDrawerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerPresentationController.swift; sourceTree = "<group>"; };
+		5092480D28C89D5500291AF7 /* VMDrawerDimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDrawerDimmingView.swift; sourceTree = "<group>"; };
+		5092480F28C89EC800291AF7 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 			children = (
 				509247DB28C5988700291AF7 /* Core */,
 				509247DC28C5989800291AF7 /* Extensions */,
+				5092480128C85CE100291AF7 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -99,11 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				509247DF28C5990500291AF7 /* Jongdari.swift */,
+				509247FB28C70F9D00291AF7 /* VMDrawerAnimatedTransitioningController.swift */,
 				509247EB28C5A23E00291AF7 /* VMDrawerAnimationConfiguration.swift */,
-				509247F128C5C39F00291AF7 /* VMDrawerAnimationer.swift */,
-				509247F728C5F6BC00291AF7 /* VMDrawerInteractiveTransitioner.swift */,
-				509247F528C5EBB600291AF7 /* VMDrawerMaskView.swift */,
-				509247ED28C5BDDC00291AF7 /* VMDrawerTransitioner.swift */,
+				5092480D28C89D5500291AF7 /* VMDrawerDimmingView.swift */,
+				509247FD28C70FC800291AF7 /* VMDrawerInteractiveTransition.swift */,
+				5092480B28C8937700291AF7 /* VMDrawerPresentationController.swift */,
+				509247FF28C7107A00291AF7 /* VMDrawerTransitioningController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -114,6 +124,16 @@
 				509247E928C5A1B400291AF7 /* UIViewController+Jongdari.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5092480128C85CE100291AF7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5092480F28C89EC800291AF7 /* Delegate.swift */,
+				5092480228C85CEF00291AF7 /* Runtime.swift */,
+				5092480928C8766400291AF7 /* Update.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,13 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5092480E28C89D5500291AF7 /* VMDrawerDimmingView.swift in Sources */,
 				509247E028C5990500291AF7 /* Jongdari.swift in Sources */,
-				509247F628C5EBB600291AF7 /* VMDrawerMaskView.swift in Sources */,
 				509247EC28C5A23E00291AF7 /* VMDrawerAnimationConfiguration.swift in Sources */,
-				509247EE28C5BDDC00291AF7 /* VMDrawerTransitioner.swift in Sources */,
-				509247F828C5F6BC00291AF7 /* VMDrawerInteractiveTransitioner.swift in Sources */,
-				509247F228C5C39F00291AF7 /* VMDrawerAnimationer.swift in Sources */,
+				5092480A28C8766400291AF7 /* Update.swift in Sources */,
+				5092480028C7107A00291AF7 /* VMDrawerTransitioningController.swift in Sources */,
+				509247FE28C70FC800291AF7 /* VMDrawerInteractiveTransition.swift in Sources */,
+				5092480328C85CEF00291AF7 /* Runtime.swift in Sources */,
+				5092480C28C8937700291AF7 /* VMDrawerPresentationController.swift in Sources */,
+				5092481028C89EC800291AF7 /* Delegate.swift in Sources */,
 				509247EA28C5A1B400291AF7 /* UIViewController+Jongdari.swift in Sources */,
+				509247FC28C70F9D00291AF7 /* VMDrawerAnimatedTransitioningController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,39 +9,69 @@
 
 import UIKit
 
-public struct VMDrawerAnimationConfiguration {
+public struct VMDrawerAnimationConfiguration: Update {
   
   public enum TransitionDirection {
     case left
     case right
   }
   
-  public var direction: TransitionDirection
+  public enum TransitionGestureType {
+    case edge
+    case fullScreen
+  }
   
-  public var duration: TimeInterval
+  public enum AnimationType {
+    case `default`
+    case zoom
+    case mask
+  }
+  
+  public var direction: TransitionDirection
+  public var animationType: AnimationType
+  
+  public var openDuration: TimeInterval
+  public var closeDuration: TimeInterval
   
   public var distanceMultiplier: CGFloat
-  public var maximumDraggingMultiplier: CGFloat
   
-  public var scale: CGFloat
+  public var maximumDraggingPercent: CGFloat
   
-  public var maskAlpha: CGFloat
+  public var scaleFactor: CGFloat
   
-  public init(direction: TransitionDirection, duration: TimeInterval, distanceMultiplier: CGFloat, maximumDraggingMultiplier: CGFloat, scale: CGFloat, maskAlpha: CGFloat) {
+  public var maskOpacity: CGFloat
+  
+  internal var distance: CGFloat {
+    return self.distanceMultiplier * UIScreen.main.bounds.width
+  }
+  
+  internal init(
+    direction: TransitionDirection = .left,
+    animationType: AnimationType = .default,
+    openDuration: TimeInterval = 0.25,
+    closeDuration: TimeInterval = 0.25,
+    distanceMultiplier: CGFloat = 0.75,
+    maximumDraggingPercent: CGFloat = 0.45,
+    scaleFactor: CGFloat = 1.0,
+    maskOpacity: CGFloat = 0.4
+  ) {
     self.direction = direction
+    self.animationType = animationType
     
-    self.duration = duration
+    self.openDuration = openDuration
+    self.closeDuration = closeDuration
     
     self.distanceMultiplier = distanceMultiplier
-    self.maximumDraggingMultiplier = maximumDraggingMultiplier
     
-    self.scale = scale
+    self.maximumDraggingPercent = maximumDraggingPercent
     
-    self.maskAlpha = maskAlpha
+    self.scaleFactor = scaleFactor
+    
+    self.maskOpacity = maskOpacity
   }
   
   public static func `default`() -> VMDrawerAnimationConfiguration {
-    return .init(direction: .left, duration: 0.25, distanceMultiplier: 0.75, maximumDraggingMultiplier: 0.45, scale: 1.0, maskAlpha: 0.4)
+    return .init()
   }
 }
 
