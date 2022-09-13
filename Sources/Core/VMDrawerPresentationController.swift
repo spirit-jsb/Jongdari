@@ -22,7 +22,7 @@ internal class VMDrawerPresentationController: UIPresentationController {
   
   private var _initialOrientation: UIDeviceOrientation?
   
-  private var _superviewOfPresentingView: UIView?
+  private var _superviewOfPresentingViewController: UIView?
   
   internal init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, source sourceViewController: UIViewController, animationConfiguration: VMDrawerAnimationConfiguration) {
     self.sourceViewController = sourceViewController
@@ -32,13 +32,19 @@ internal class VMDrawerPresentationController: UIPresentationController {
     
     self._initialOrientation = UIDevice.current.orientation
     
-    self._dimmingView.handleTapGesture.delegate(on: self) { (weakSelf, _) in
+    self._dimmingView.tapGestureHandler.delegate(on: self) { (weakSelf, _) in
       weakSelf.presentedViewController.dismiss(animated: true, completion: nil)
     }
     
-    self._dimmingView.handlePanGesture.delegate(on: self) { (weakSelf, panGesture) in
+    self._dimmingView.panGestureHandler.delegate(on: self) { (weakSelf, panGesture) in
       weakSelf.dismissHandlerWhenUsingPanGesture.call(panGesture)
     }
+  }
+  
+  deinit {
+#if DEBUG
+    print("\(type(of: self)) \(#function)")
+#endif
   }
   
   internal override var frameOfPresentedViewInContainerView: CGRect {
@@ -164,7 +170,7 @@ internal class VMDrawerPresentationController: UIPresentationController {
     
     switch animationType {
       case .`default`:
-        self.presentingViewController.view.frame = CGRect(x: direction == .left ? newWidth : -(newWidth), y: 0.0, width: boundsOfContainerView.width, height: boundsOfContainerView.height)
+        self.presentingViewController.view.transform = CGAffineTransform(translationX: direction == .left ? newWidth : -(newWidth), y: 0.0)
       case .zoom:
         let newHeight = self.animationConfiguration.scaleFactor * boundsOfContainerView.height
         let newY = (boundsOfContainerView.height - newHeight) / 2.0
@@ -203,7 +209,7 @@ internal class VMDrawerPresentationController: UIPresentationController {
     let dimmingOpacity = self.animationConfiguration.maskOpacity
     let dimmingTransform = CGAffineTransform(scaleX: 1.0, y: self.animationConfiguration.scaleFactor)
     
-    self._superviewOfPresentingView = self.presentingViewController.view.superview
+    self._superviewOfPresentingViewController = self.presentingViewController.view.superview
     
     self._dimmingView.frame = boundsOfContainerView
     
@@ -220,8 +226,8 @@ internal class VMDrawerPresentationController: UIPresentationController {
   private func _endTransitionHandler() {
     self._dimmingView.removeFromSuperview()
     
-    if self._superviewOfPresentingView != nil {
-      self._superviewOfPresentingView!.addSubview(self.presentingViewController.view)
+    if self._superviewOfPresentingViewController != nil {
+      self._superviewOfPresentingViewController!.addSubview(self.presentingViewController.view)
     }
   }
   

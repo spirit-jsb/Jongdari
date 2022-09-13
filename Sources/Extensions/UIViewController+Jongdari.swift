@@ -27,11 +27,11 @@ extension JongdariWrapper where Base: UIViewController {
     var transitioningController = self.base.transitioningController
     if transitioningController == nil {
       transitioningController = VMDrawerTransitioningController()
-      
-      self.base.transitioningController = transitioningController
     }
     
     transitioningController!.animationConfiguration = animationConfiguration
+    
+    self.base.transitioningController = transitioningController
     
     viewController.transitioningController = transitioningController
     
@@ -53,8 +53,6 @@ extension JongdariWrapper where Base: UIViewController {
     var transitioningController = self.base.transitioningController
     if transitioningController == nil {
       transitioningController = VMDrawerTransitioningController()
-      
-      self.base.transitioningController = transitioningController
     }
     
     transitioningController!.animationConfiguration = animationConfiguration
@@ -74,17 +72,20 @@ extension JongdariWrapper where Base: UIViewController {
     
     let presentingNavigationController = presentingViewController as? UINavigationController ?? presentingViewController?.navigationController ?? (presentingViewController as? UITabBarController)?.selectedViewController as? UINavigationController
     
-    let presentingNavigationTransition = CATransition()
-    presentingNavigationTransition.type = .push
-    presentingNavigationTransition.subtype = self.base.transitioningController?.animationConfiguration.direction == .left ? .fromLeft : .fromRight
-    
-    presentingNavigationTransition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-    
-    presentingNavigationTransition.duration = 0.2
-    
-    presentingNavigationController?.view.layer.add(presentingNavigationTransition, forKey: nil)
+    if animated {
+      let presentingNavigationTransition = CATransition()
+      presentingNavigationTransition.type = .push
+      presentingNavigationTransition.subtype = self.base.transitioningController?.animationConfiguration.direction == .left ? .fromRight : .fromLeft
+      
+      presentingNavigationTransition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+      
+      presentingNavigationTransition.duration = 0.3
+      
+      presentingNavigationController?.view.layer.add(presentingNavigationTransition, forKey: kCATransition)
+    }
     
     self.base.dismiss(animated: true, completion: nil)
+    
     presentingNavigationController?.pushViewController(viewController, animated: false)
   }
   
@@ -98,6 +99,7 @@ extension JongdariWrapper where Base: UIViewController {
     }
     else {
       viewController.modalPresentationStyle = .overFullScreen
+      
       self.base.present(viewController, animated: animated, completion: completion)
     }
   }

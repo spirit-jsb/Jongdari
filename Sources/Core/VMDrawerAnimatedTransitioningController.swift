@@ -11,14 +11,20 @@ import UIKit
 
 internal class VMDrawerAnimatedTransitioningController: NSObject {
   
-  internal private(set) var transitionType: VMDrawerTransitioningController.TransitioningType
-  internal var animationConfiguration: VMDrawerAnimationConfiguration
+  internal let transitionType: VMDrawerTransitioningController.TransitioningType
+  internal let animationConfiguration: VMDrawerAnimationConfiguration
   
   internal var presentationController: VMDrawerPresentationController?
   
   internal init(transitionType: VMDrawerTransitioningController.TransitioningType, animationConfiguration: VMDrawerAnimationConfiguration) {
     self.transitionType = transitionType
     self.animationConfiguration = animationConfiguration
+  }
+  
+  deinit {
+#if DEBUG
+    print("\(type(of: self)) \(#function)")
+#endif
   }
   
   private func _open(using transitionContext: UIViewControllerContextTransitioning) {
@@ -60,6 +66,14 @@ internal class VMDrawerAnimatedTransitioningController: NSObject {
     let distance = self.animationConfiguration.distance
     
     let transformOfFromViewController = CGAffineTransform(translationX: direction == .left ? distance : -(distance), y: 0.0)
+    
+    if #available(iOS 11.0, *) {
+      
+    }
+    else {
+      containerView.addSubview(fromViewController.view)
+      containerView.sendSubviewToBack(fromViewController.view)
+    }
     
     let initialFrameOfToViewController = presentationController.initialFrameOfPresentedViewInContainerView()
     let finalFrameOfToViewController = transitionContext.finalFrame(for: toViewController)

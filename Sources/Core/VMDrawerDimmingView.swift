@@ -11,8 +11,8 @@ import UIKit
 
 internal class VMDrawerDimmingView: UIView {
   
-  internal var handleTapGesture = Delegate<UITapGestureRecognizer, Void>()
-  internal var handlePanGesture = Delegate<UIPanGestureRecognizer, Void>()
+  internal var tapGestureHandler = Delegate<UITapGestureRecognizer, Void>()
+  internal var panGestureHandler = Delegate<UIPanGestureRecognizer, Void>()
   
   internal override init(frame: CGRect) {
     super.init(frame: frame)
@@ -33,12 +33,18 @@ internal class VMDrawerDimmingView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  deinit {
+#if DEBUG
+    print("\(type(of: self)) \(#function)")
+#endif
+  }
+  
   @objc private func handleTapGesture(_ tapGesture: UITapGestureRecognizer) {
-    self.handleTapGesture.call(tapGesture)
+    self.tapGestureHandler.call(tapGesture)
   }
   
   @objc private func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
-    self.handlePanGesture.call(panGesture)
+    self.panGestureHandler.call(panGesture)
   }
 }
 

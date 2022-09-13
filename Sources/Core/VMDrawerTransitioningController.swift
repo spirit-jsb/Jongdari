@@ -10,25 +10,35 @@
 import UIKit
 
 internal class VMDrawerTransitioningController: NSObject {
-    
+  
   internal enum TransitioningType {
     case open
     case close
   }
   
-  internal var animationConfiguration: VMDrawerAnimationConfiguration!
+  internal var animationConfiguration: VMDrawerAnimationConfiguration! {
+    willSet {
+      self._openInteractiveTransition.animationConfiguration = newValue
+      self._closeInteractiveTransition.animationConfiguration = newValue
+    }
+  }
   
-  internal var transitionHandler: TransitionHandler?
+  internal var transitionHandler: TransitionHandler? {
+    willSet {
+      self._openInteractiveTransition.transitionHandler = newValue
+    }
+  }
   
   internal var presentationController: VMDrawerPresentationController?
   
-  private lazy var _openInteractiveTransition: VMDrawerInteractiveTransition = {
-    let interactiveTransition = VMDrawerInteractiveTransition(transitionType: .open)
-    interactiveTransition.transitionHandler = self.transitionHandler
-    
-    return interactiveTransition
-  }()
+  private lazy var _openInteractiveTransition: VMDrawerInteractiveTransition = .init(transitionType: .open)
   private lazy var _closeInteractiveTransition: VMDrawerInteractiveTransition = .init(transitionType: .close)
+  
+  deinit {
+#if DEBUG
+    print("\(type(of: self)) \(#function)")
+#endif
+  }
   
   internal func registerGesture(_ gestureType: VMDrawerAnimationConfiguration.TransitionGestureType, on viewController: UIViewController) {
     switch gestureType {
@@ -50,11 +60,11 @@ internal class VMDrawerTransitioningController: NSObject {
   }
   
   @objc private func handleEdgePanGesture(_ edgePanGesture: UIScreenEdgePanGestureRecognizer) {
-    
+    self._openInteractiveTransition.handleOpenGesture(edgePanGesture)
   }
   
   @objc private func handlePanGesture(_ panGesture: UIPanGestureRecognizer) {
-    
+    self._openInteractiveTransition.handleOpenGesture(panGesture)
   }
 }
 
@@ -84,6 +94,10 @@ extension VMDrawerTransitioningController: UIViewControllerTransitioningDelegate
   
   func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
     let presentationController = VMDrawerPresentationController(presentedViewController: presented, presenting: presenting, source: source, animationConfiguration: self.animationConfiguration)
+    
+    presentationController.dismissHandlerWhenUsingPanGesture.delegate(on: self) { (weakSelf, panGesture) in
+      weakSelf._closeInteractiveTransition.handleCloseGesture(panGesture, presenting: presenting ?? source)
+    }
     
     self.presentationController = presentationController
     
