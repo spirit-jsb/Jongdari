@@ -16,6 +16,9 @@
 		509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247D128C5902600291AF7 /* SceneDelegate.swift */; };
 		5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; };
 		5092480728C86E8200291AF7 /* Jongdari.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5092481828D0893800291AF7 /* Koinu in Frameworks */ = {isa = PBXBuildFile; productRef = 5092481728D0893800291AF7 /* Koinu */; };
+		5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481928D08A3D00291AF7 /* LeftTableViewController.swift */; };
+		5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,8 @@
 		509247D028C5902600291AF7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		509247D128C5902600291AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5092480528C86E8200291AF7 /* Jongdari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Jongdari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5092481928D08A3D00291AF7 /* LeftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */,
+				5092481828D0893800291AF7 /* Koinu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +134,8 @@
 		509247D928C5903000291AF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5092481928D08A3D00291AF7 /* LeftTableViewController.swift */,
+				5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */,
 				509247C928C5902600291AF7 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -166,6 +174,9 @@
 			dependencies = (
 			);
 			name = "Jongdari-Demo";
+			packageProductDependencies = (
+				5092481728D0893800291AF7 /* Koinu */,
+			);
 			productName = "Jongdari-Demo";
 			productReference = 5092479228C58FE400291AF7 /* Jongdari-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 5092478928C58FE400291AF7;
+			packageReferences = (
+				5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */,
+			);
 			productRefGroup = 5092479328C58FE400291AF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,6 +268,8 @@
 			files = (
 				509247D628C5902600291AF7 /* AppDelegate.swift in Sources */,
 				509247D228C5902600291AF7 /* ViewController.swift in Sources */,
+				5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */,
+				5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */,
 				509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +564,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spirit-jsb/Koinu.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5092481728D0893800291AF7 /* Koinu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */;
+			productName = Koinu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5092478A28C58FE400291AF7 /* Project object */;
 }

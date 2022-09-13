@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Koinu",
+        "repositoryURL": "https://github.com/spirit-jsb/Koinu.git",
+        "state": {
+          "branch": null,
+          "revision": "7e94a6149bd6d00f7ed3289d0574603c7413158a",
+          "version": "1.0.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
