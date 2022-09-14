@@ -131,6 +131,9 @@ internal class VMDrawerAnimatedTransitioningController: NSObject {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1.0) {
         fromViewController.view.frame = finalFrameOfFromeViewController
         toViewController.view.frame = finalFrameOfToViewController
+        
+        fromViewController.view.setNeedsLayout()
+        fromViewController.view.layoutIfNeeded()
       }
     }, completion: { (_) in
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -223,6 +226,9 @@ internal class VMDrawerAnimatedTransitioningController: NSObject {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1.0) {
         fromViewController.view.frame = finalFrameOfFromeViewController
         toViewController.view.frame = finalFrameOfToViewController
+        
+        toViewController.view.setNeedsLayout()
+        toViewController.view.layoutIfNeeded()
       }
     }, completion: { (_) in
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
