@@ -19,6 +19,9 @@
 		5092481828D0893800291AF7 /* Koinu in Frameworks */ = {isa = PBXBuildFile; productRef = 5092481728D0893800291AF7 /* Koinu */; };
 		5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481928D08A3D00291AF7 /* LeftTableViewController.swift */; };
 		5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */; };
+		5092481F28D1C8C800291AF7 /* RightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */; };
+		5092482128D1D8BF00291AF7 /* PushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092482028D1D8BF00291AF7 /* PushedViewController.swift */; };
+		5092482328D1D93900291AF7 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092482228D1D93900291AF7 /* PresentedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		5092480528C86E8200291AF7 /* Jongdari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Jongdari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5092481928D08A3D00291AF7 /* LeftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
 		5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCollectionViewController.swift; sourceTree = "<group>"; };
+		5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCollectionViewCell.swift; sourceTree = "<group>"; };
+		5092482028D1D8BF00291AF7 /* PushedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushedViewController.swift; sourceTree = "<group>"; };
+		5092482228D1D93900291AF7 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				509247CB28C5902600291AF7 /* LaunchScreen.storyboard */,
 				509247CD28C5902600291AF7 /* Main.storyboard */,
 				509247D928C5903000291AF7 /* ViewControllers */,
+				5092481D28D1C8A800291AF7 /* Views */,
 				509247DA28C5903C00291AF7 /* Resources */,
 				509247D028C5902600291AF7 /* Info.plist */,
 			);
@@ -136,6 +143,8 @@
 			children = (
 				5092481928D08A3D00291AF7 /* LeftTableViewController.swift */,
 				5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */,
+				5092482228D1D93900291AF7 /* PresentedViewController.swift */,
+				5092482028D1D8BF00291AF7 /* PushedViewController.swift */,
 				509247C928C5902600291AF7 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -155,6 +164,14 @@
 				5092480528C86E8200291AF7 /* Jongdari.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5092481D28D1C8A800291AF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				509247D628C5902600291AF7 /* AppDelegate.swift in Sources */,
+				5092481F28D1C8C800291AF7 /* RightCollectionViewCell.swift in Sources */,
 				509247D228C5902600291AF7 /* ViewController.swift in Sources */,
+				5092482128D1D8BF00291AF7 /* PushedViewController.swift in Sources */,
 				5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */,
+				5092482328D1D93900291AF7 /* PresentedViewController.swift in Sources */,
 				5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */,
 				509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */,
 			);

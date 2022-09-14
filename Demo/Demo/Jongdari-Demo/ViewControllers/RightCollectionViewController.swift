@@ -6,83 +6,119 @@
 //
 
 import UIKit
-
-private let reuseIdentifier = "Cell"
+import Koinu
 
 class RightCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+  
+  var examples = [[JongdariExample]]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-        // Configure the cell
+    self.examples = [
+      [
+        JongdariExample(titleText: "Present viewController from drawer", selector: #selector(presentViewControllerFromDrawer)),
+        JongdariExample(titleText: "Push viewController from drawer", selector: #selector(pushViewControllerFromDrawer)),
+        JongdariExample(titleText: "Dismiss drawer", selector: #selector(dismissDrawer))
+      ],
+      [
+        JongdariExample(titleText: "Present viewController from drawer", selector: #selector(presentViewControllerFromDrawer)),
+        JongdariExample(titleText: "Push viewController from drawer", selector: #selector(pushViewControllerFromDrawer)),
+        JongdariExample(titleText: "Dismiss drawer", selector: #selector(dismissDrawer))
+      ]
+    ]
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  @objc func presentViewControllerFromDrawer() {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let presentedViewController = mainStoryboard.instantiateViewController(withIdentifier: "PresentedViewController")
     
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    let presentedNavigationController = VMNavigationController(rootViewController: presentedViewController)
     
-    }
-    */
+    self.vm.presentFromDrawer(presentedNavigationController, animated: true, closeDrawer: false, completion: nil)
+  }
+  
+  @objc func pushViewControllerFromDrawer() {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let pushedViewController = mainStoryboard.instantiateViewController(withIdentifier: "PushedViewController")
+    
+    self.vm.pushViewControllerFromDrawer(pushedViewController, animated: true)
+  }
+  
+  @objc func dismissDrawer() {
+    self.dismiss(animated: true, completion: nil)
+  }
+}
 
+extension RightCollectionViewController {
+  
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return self.examples.count
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return self.examples[section].count
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JongdariCell", for: indexPath) as! RightCollectionViewCell
+    
+    let example = self.examples[indexPath.section][indexPath.row]
+    
+    cell.textLabel.text = example.titleText
+    cell.textLabel.font = UIFont.systemFont(ofSize: 17.0)
+    if #available(iOS 13.0, *) {
+      cell.textLabel.textColor = UIColor(dynamicProvider: { $0.userInterfaceStyle == .light ? UIColor.black : UIColor.white })
+    }
+    else {
+      cell.textLabel.textColor = UIColor.black
+    }
+    cell.textLabel.textAlignment = .center
+    
+    return cell
+  }
+}
+
+extension RightCollectionViewController {
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let example = self.examples[indexPath.section][indexPath.row]
+    
+    self.perform(example.selector)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      collectionView.deselectItem(at: indexPath, animated: true)
+    }
+  }
+}
+
+extension RightCollectionViewController: UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: collectionView.bounds.width - 8.0 * 2.0, height: 44.0)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 8.0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 8.0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    return .zero
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    return .zero
+  }
 }

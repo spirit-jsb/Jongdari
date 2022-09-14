@@ -6,28 +6,66 @@
 //
 
 import UIKit
+import Koinu
 
 class LeftTableViewController: UITableViewController {
+  
+  var examples = [[JongdariExample]]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
+    self.examples = [
+      [
+        JongdariExample(titleText: "Present viewController from drawer", selector: #selector(presentViewControllerFromDrawer)),
+        JongdariExample(titleText: "Push viewController from drawer", selector: #selector(pushViewControllerFromDrawer)),
+        JongdariExample(titleText: "Dismiss drawer", selector: #selector(dismissDrawer))
+      ],
+      [
+        JongdariExample(titleText: "Present viewController from drawer", selector: #selector(presentViewControllerFromDrawer)),
+        JongdariExample(titleText: "Push viewController from drawer", selector: #selector(pushViewControllerFromDrawer)),
+        JongdariExample(titleText: "Dismiss drawer", selector: #selector(dismissDrawer))
+      ]
+    ]
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  @objc func presentViewControllerFromDrawer() {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let presentedViewController = mainStoryboard.instantiateViewController(withIdentifier: "PresentedViewController")
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    let presentedNavigationController = VMNavigationController(rootViewController: presentedViewController)
+    
+    self.vm.presentFromDrawer(presentedNavigationController, animated: true, closeDrawer: true, completion: nil)
+  }
+  
+  @objc func pushViewControllerFromDrawer() {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let pushedViewController = mainStoryboard.instantiateViewController(withIdentifier: "PushedViewController")
+        
+    self.vm.pushViewControllerFromDrawer(pushedViewController, animated: true)
+  }
+  
+  @objc func dismissDrawer() {
+    self.dismiss(animated: true, completion: nil)
   }
 }
 
 extension LeftTableViewController {
   
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return self.examples.count
+  }
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10.0
+    return self.examples[section].count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ChoiwanCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "JongdariCell", for: indexPath)
     
     let example = self.examples[indexPath.section][indexPath.row]
     
@@ -54,5 +92,18 @@ extension LeftTableViewController {
     }
     
     return cell
+  }
+}
+
+extension LeftTableViewController {
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let example = self.examples[indexPath.section][indexPath.row]
+    
+    self.perform(example.selector)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
   }
 }
