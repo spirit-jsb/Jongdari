@@ -133,24 +133,26 @@ internal class VMDrawerInteractiveTransition: UIPercentDrivenInteractiveTransiti
     var percentComplete = self._percentComplete
     
     if self._isDraggingComplete {
-      if percentComplete >= VMDrawerInteractiveTransition.maximumPercentCompleteThreshold {
+      guard percentComplete < VMDrawerInteractiveTransition.maximumPercentCompleteThreshold else {
         self._endHandleInteractiveTransition()
         
         self.finish()
+        
+        return
       }
-      else {
-        percentComplete += self._framesPerDuration
-      }
+      
+      percentComplete += self._framesPerDuration
     }
     else {
-      if percentComplete <= VMDrawerInteractiveTransition.minimumPercentCompleteThreshold {
+      guard percentComplete > VMDrawerInteractiveTransition.minimumPercentCompleteThreshold else {
         self._endHandleInteractiveTransition()
         
         self.cancel()
+        
+        return
       }
-      else {
-        percentComplete -= self._framesPerDuration
-      }
+      
+      percentComplete -= self._framesPerDuration
     }
     
     percentComplete = min(max(percentComplete, VMDrawerInteractiveTransition.minimumPercentCompleteThreshold), VMDrawerInteractiveTransition.maximumPercentCompleteThreshold)
