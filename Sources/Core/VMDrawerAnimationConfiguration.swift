@@ -52,7 +52,7 @@ public struct VMDrawerAnimationConfiguration: Update {
     closeDuration: TimeInterval = 0.25,
     distanceMultiplier: CGFloat = 0.75,
     maximumDraggingPercent: CGFloat = 0.45,
-    scaleFactor: CGFloat = 1.0,
+    scaleFactor: CGFloat = 0.8,
     maskOpacity: CGFloat = 0.4
   ) {
     self.direction = direction
