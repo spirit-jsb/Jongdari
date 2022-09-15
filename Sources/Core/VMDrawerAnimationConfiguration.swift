@@ -48,8 +48,8 @@ public struct VMDrawerAnimationConfiguration: Update {
   internal init(
     direction: TransitionDirection = .left,
     animationType: AnimationType = .default,
-    openDuration: TimeInterval = 0.25,
-    closeDuration: TimeInterval = 0.25,
+    openDuration: TimeInterval = 0.3,
+    closeDuration: TimeInterval = 0.3,
     distanceMultiplier: CGFloat = 0.75,
     maximumDraggingPercent: CGFloat = 0.45,
     scaleFactor: CGFloat = 0.8,
