@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		509247C728C5901200291AF7 /* Jongdari_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247C628C5901200291AF7 /* Jongdari_DemoTests.swift */; };
+		509247D228C5902600291AF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247C928C5902600291AF7 /* ViewController.swift */; };
+		509247D328C5902600291AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509247CA28C5902600291AF7 /* Assets.xcassets */; };
+		509247D428C5902600291AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509247CB28C5902600291AF7 /* LaunchScreen.storyboard */; };
+		509247D528C5902600291AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509247CD28C5902600291AF7 /* Main.storyboard */; };
+		509247D628C5902600291AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247CF28C5902600291AF7 /* AppDelegate.swift */; };
+		509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509247D128C5902600291AF7 /* SceneDelegate.swift */; };
+		5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; };
+		5092480728C86E8200291AF7 /* Jongdari.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5092480528C86E8200291AF7 /* Jongdari.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5092481828D0893800291AF7 /* Koinu in Frameworks */ = {isa = PBXBuildFile; productRef = 5092481728D0893800291AF7 /* Koinu */; };
+		5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481928D08A3D00291AF7 /* LeftTableViewController.swift */; };
+		5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */; };
+		5092481F28D1C8C800291AF7 /* RightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */; };
+		5092482128D1D8BF00291AF7 /* PushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092482028D1D8BF00291AF7 /* PushedViewController.swift */; };
+		5092482328D1D93900291AF7 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092482228D1D93900291AF7 /* PresentedViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		509247A928C58FE500291AF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5092478A28C58FE400291AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5092479128C58FE400291AF7;
+			remoteInfo = "Jongdari-Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5092480828C86E8200291AF7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5092480728C86E8200291AF7 /* Jongdari.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5092479228C58FE400291AF7 /* Jongdari-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jongdari-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		509247A828C58FE500291AF7 /* Jongdari-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jongdari-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		509247C628C5901200291AF7 /* Jongdari_DemoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Jongdari_DemoTests.swift; path = "Jongdari-DemoTests/Jongdari_DemoTests.swift"; sourceTree = "<group>"; };
+		509247C928C5902600291AF7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		509247CA28C5902600291AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		509247CC28C5902600291AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		509247CE28C5902600291AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		509247CF28C5902600291AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		509247D028C5902600291AF7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509247D128C5902600291AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5092480528C86E8200291AF7 /* Jongdari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Jongdari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5092481928D08A3D00291AF7 /* LeftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCollectionViewController.swift; sourceTree = "<group>"; };
+		5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCollectionViewCell.swift; sourceTree = "<group>"; };
+		5092482028D1D8BF00291AF7 /* PushedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushedViewController.swift; sourceTree = "<group>"; };
+		5092482228D1D93900291AF7 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5092478F28C58FE400291AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5092480628C86E8200291AF7 /* Jongdari.framework in Frameworks */,
+				5092481828D0893800291AF7 /* Koinu in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509247A528C58FE500291AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5092478928C58FE400291AF7 = {
+			isa = PBXGroup;
+			children = (
+				509247C528C58FED00291AF7 /* Demo */,
+				509247AB28C58FE500291AF7 /* Jongdari-DemoTests */,
+				5092479328C58FE400291AF7 /* Products */,
+				5092480428C86E8200291AF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5092479328C58FE400291AF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5092479228C58FE400291AF7 /* Jongdari-Demo.app */,
+				509247A828C58FE500291AF7 /* Jongdari-DemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		509247AB28C58FE500291AF7 /* Jongdari-DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				509247C628C5901200291AF7 /* Jongdari_DemoTests.swift */,
+			);
+			name = "Jongdari-DemoTests";
+			sourceTree = "<group>";
+		};
+		509247C528C58FED00291AF7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				509247C828C5902600291AF7 /* Jongdari-Demo */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		509247C828C5902600291AF7 /* Jongdari-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				509247CF28C5902600291AF7 /* AppDelegate.swift */,
+				509247D128C5902600291AF7 /* SceneDelegate.swift */,
+				509247CB28C5902600291AF7 /* LaunchScreen.storyboard */,
+				509247CD28C5902600291AF7 /* Main.storyboard */,
+				509247D928C5903000291AF7 /* ViewControllers */,
+				5092481D28D1C8A800291AF7 /* Views */,
+				509247DA28C5903C00291AF7 /* Resources */,
+				509247D028C5902600291AF7 /* Info.plist */,
+			);
+			name = "Jongdari-Demo";
+			path = "Demo/Jongdari-Demo";
+			sourceTree = "<group>";
+		};
+		509247D928C5903000291AF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5092481928D08A3D00291AF7 /* LeftTableViewController.swift */,
+				5092481B28D08A4E00291AF7 /* RightCollectionViewController.swift */,
+				5092482228D1D93900291AF7 /* PresentedViewController.swift */,
+				5092482028D1D8BF00291AF7 /* PushedViewController.swift */,
+				509247C928C5902600291AF7 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		509247DA28C5903C00291AF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				509247CA28C5902600291AF7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5092480428C86E8200291AF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5092480528C86E8200291AF7 /* Jongdari.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5092481D28D1C8A800291AF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5092481E28D1C8C800291AF7 /* RightCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5092479128C58FE400291AF7 /* Jongdari-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509247BC28C58FE500291AF7 /* Build configuration list for PBXNativeTarget "Jongdari-Demo" */;
+			buildPhases = (
+				5092478E28C58FE400291AF7 /* Sources */,
+				5092478F28C58FE400291AF7 /* Frameworks */,
+				5092479028C58FE400291AF7 /* Resources */,
+				5092480828C86E8200291AF7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jongdari-Demo";
+			packageProductDependencies = (
+				5092481728D0893800291AF7 /* Koinu */,
+			);
+			productName = "Jongdari-Demo";
+			productReference = 5092479228C58FE400291AF7 /* Jongdari-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		509247A728C58FE500291AF7 /* Jongdari-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 509247BF28C58FE500291AF7 /* Build configuration list for PBXNativeTarget "Jongdari-DemoTests" */;
+			buildPhases = (
+				509247A428C58FE500291AF7 /* Sources */,
+				509247A528C58FE500291AF7 /* Frameworks */,
+				509247A628C58FE500291AF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				509247AA28C58FE500291AF7 /* PBXTargetDependency */,
+			);
+			name = "Jongdari-DemoTests";
+			productName = "Jongdari-DemoTests";
+			productReference = 509247A828C58FE500291AF7 /* Jongdari-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5092478A28C58FE400291AF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					5092479128C58FE400291AF7 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					509247A728C58FE500291AF7 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+						TestTargetID = 5092479128C58FE400291AF7;
+					};
+				};
+			};
+			buildConfigurationList = 5092478D28C58FE400291AF7 /* Build configuration list for PBXProject "Jongdari-Demo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5092478928C58FE400291AF7;
+			packageReferences = (
+				5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */,
+			);
+			productRefGroup = 5092479328C58FE400291AF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5092479128C58FE400291AF7 /* Jongdari-Demo */,
+				509247A728C58FE500291AF7 /* Jongdari-DemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5092479028C58FE400291AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509247D528C5902600291AF7 /* Main.storyboard in Resources */,
+				509247D328C5902600291AF7 /* Assets.xcassets in Resources */,
+				509247D428C5902600291AF7 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509247A628C58FE500291AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5092478E28C58FE400291AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509247D628C5902600291AF7 /* AppDelegate.swift in Sources */,
+				5092481F28D1C8C800291AF7 /* RightCollectionViewCell.swift in Sources */,
+				509247D228C5902600291AF7 /* ViewController.swift in Sources */,
+				5092482128D1D8BF00291AF7 /* PushedViewController.swift in Sources */,
+				5092481C28D08A4E00291AF7 /* RightCollectionViewController.swift in Sources */,
+				5092482328D1D93900291AF7 /* PresentedViewController.swift in Sources */,
+				5092481A28D08A3D00291AF7 /* LeftTableViewController.swift in Sources */,
+				509247D828C5902600291AF7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509247A428C58FE500291AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509247C728C5901200291AF7 /* Jongdari_DemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		509247AA28C58FE500291AF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5092479128C58FE400291AF7 /* Jongdari-Demo */;
+			targetProxy = 509247A928C58FE500291AF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		509247CB28C5902600291AF7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				509247CC28C5902600291AF7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		509247CD28C5902600291AF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				509247CE28C5902600291AF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		509247BA28C58FE500291AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		509247BB28C58FE500291AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		509247BD28C58FE500291AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Demo/Jongdari-Demo/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.max.jian.Jongdari-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		509247BE28C58FE500291AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Demo/Jongdari-Demo/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.max.jian.Jongdari-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		509247C028C58FE500291AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.max.jian.Jongdari-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jongdari-Demo.app/Jongdari-Demo";
+			};
+			name = Debug;
+		};
+		509247C128C58FE500291AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.max.jian.Jongdari-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jongdari-Demo.app/Jongdari-Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5092478D28C58FE400291AF7 /* Build configuration list for PBXProject "Jongdari-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509247BA28C58FE500291AF7 /* Debug */,
+				509247BB28C58FE500291AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509247BC28C58FE500291AF7 /* Build configuration list for PBXNativeTarget "Jongdari-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509247BD28C58FE500291AF7 /* Debug */,
+				509247BE28C58FE500291AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		509247BF28C58FE500291AF7 /* Build configuration list for PBXNativeTarget "Jongdari-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				509247C028C58FE500291AF7 /* Debug */,
+				509247C128C58FE500291AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spirit-jsb/Koinu.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5092481728D0893800291AF7 /* Koinu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5092481628D0893800291AF7 /* XCRemoteSwiftPackageReference "Koinu" */;
+			productName = Koinu;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5092478A28C58FE400291AF7 /* Project object */;
+}
